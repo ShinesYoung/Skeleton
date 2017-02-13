@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE2E97431E518A0100C755DF /* SKSubviewStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BE2E97411E518A0100C755DF /* SKSubviewStrategy.h */; };
+		BE2E97441E518A0100C755DF /* SKSubviewStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2E97421E518A0100C755DF /* SKSubviewStrategy.m */; };
 		BE4351381E4DE4290037599E /* Skeleton.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351361E4DE4290037599E /* Skeleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE4351441E4DE49F0037599E /* SKAppContext.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351421E4DE49F0037599E /* SKAppContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE4351451E4DE49F0037599E /* SKAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4351431E4DE49F0037599E /* SKAppContext.m */; };
@@ -53,6 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE2E97411E518A0100C755DF /* SKSubviewStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSubviewStrategy.h; sourceTree = "<group>"; };
+		BE2E97421E518A0100C755DF /* SKSubviewStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSubviewStrategy.m; sourceTree = "<group>"; };
 		BE4351331E4DE4290037599E /* Skeleton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Skeleton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4351361E4DE4290037599E /* Skeleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Skeleton.h; sourceTree = "<group>"; };
 		BE4351371E4DE4290037599E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 				BE4351931E4DEE190037599E /* SKStackPushAboveStrategy.m */,
 				BE4351861E4DED000037599E /* SKStackTopStrategy.h */,
 				BE4351871E4DED000037599E /* SKStackTopStrategy.m */,
+				BE2E97411E518A0100C755DF /* SKSubviewStrategy.h */,
+				BE2E97421E518A0100C755DF /* SKSubviewStrategy.m */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 				BE4351901E4DEDFA0037599E /* SKStackAboveBottomStrategy.h in Headers */,
 				BE4351801E4DEC5C0037599E /* SKPresentStrategy.h in Headers */,
 				BE4351381E4DE4290037599E /* Skeleton.h in Headers */,
+				BE2E97431E518A0100C755DF /* SKSubviewStrategy.h in Headers */,
 				BE4351781E4DEC230037599E /* SKDefaultStrategy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +328,7 @@
 				BE4351611E4DE5B50037599E /* SKBizModule.m in Sources */,
 				BE4351851E4DEC740037599E /* SKRootStrategy.m in Sources */,
 				BE4351511E4DE4F40037599E /* UIApplication+Skeleton.m in Sources */,
+				BE2E97441E518A0100C755DF /* SKSubviewStrategy.m in Sources */,
 				BE4351551E4DE55A0037599E /* SKPage.m in Sources */,
 				BE43514D1E4DE4D00037599E /* SKAppDelegate.m in Sources */,
 				BE4351591E4DE5810037599E /* UINavigationController+Skeleton.m in Sources */,

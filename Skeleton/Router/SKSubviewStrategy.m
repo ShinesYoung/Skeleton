@@ -30,7 +30,7 @@
 
 - (NSString *)strategyName
 {
-    return vRouteStgyNameStackTop;
+    return vRouteStgyNameSubview;
 }
 
 - (id)routing:(SKModule *)aModule action:(SEL)aSelector params:(NSDictionary *)params

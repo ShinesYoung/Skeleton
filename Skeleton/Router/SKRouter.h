@@ -33,6 +33,7 @@ static NSString *_Nonnull const vRouteStgyNameStackTop         = @"StackTop";
 static NSString *_Nonnull const vRouteStgyNameStackAboveBottom = @"StackAboveBottom";
 static NSString *_Nonnull const vRouteStgyNameStackPushAbove   = @"StackPushAbove";
 
+static NSString *_Nonnull const vRouteStgyNameSubview = @"Subview";
 static NSString *_Nonnull const vRouteStgyNameData    = @"Data";
 static NSString *_Nonnull const vRouteStgyNameRoot    = @"Root";
 static NSString *_Nonnull const vRouteStgyNamePresent = @"Present";

@@ -43,23 +43,31 @@
         return NO;
     }
     
-    [self.moduleList addObject:aModule];
-    [self.moduleMap setValue:aModule forKey:[aModule moduleName]];
+    @synchronized (self.moduleList)
+    {
+        [self.moduleList addObject:aModule];
+        [self.moduleList sortUsingComparator:
+         ^NSComparisonResult(SKModule *_Nonnull module1,
+                             SKModule *_Nonnull module2)
+         {
+             if ([module1 moduleLevel] > [module2 moduleLevel])
+             {
+                 return (NSComparisonResult)NSOrderedDescending;
+             }
+             if ([module1 moduleLevel] < [module2 moduleLevel])
+             {
+                 return (NSComparisonResult)NSOrderedAscending;
+             }
+             return (NSComparisonResult)NSOrderedSame;
+         }];
+        
+    }
     
-    [self.moduleList sortUsingComparator:
-     ^NSComparisonResult(SKModule *_Nonnull module1,
-                         SKModule *_Nonnull module2)
-     {
-         if ([module1 moduleLevel] > [module2 moduleLevel])
-         {
-             return (NSComparisonResult)NSOrderedDescending;
-         }
-         if ([module1 moduleLevel] < [module2 moduleLevel])
-         {
-             return (NSComparisonResult)NSOrderedAscending;
-         }
-         return (NSComparisonResult)NSOrderedSame;
-     }];
+    @synchronized (self.moduleMap)
+    {
+        [self.moduleMap setValue:aModule forKey:[aModule moduleName]];
+    }
+    
     
     NSLog(@"Module Register : %@", [aModule moduleName]);
     
@@ -68,40 +76,57 @@
 
 - (BOOL)unregisterModule:(SKModule *)aModule
 {
-    if (self.moduleList)
+    @synchronized (self.moduleList)
     {
-        if ([self.moduleList containsObject:aModule])
+        if (self.moduleList)
         {
-            [self.moduleList removeObject:aModule];
+            if ([self.moduleList containsObject:aModule])
+            {
+                [self.moduleList removeObject:aModule];
+            }
         }
     }
-    if (self.moduleMap)
+    
+    @synchronized (self.moduleMap)
     {
-        if ([self.moduleMap valueForKey:[aModule moduleName]])
+        if (self.moduleMap)
         {
-            [self.moduleMap removeObjectForKey:[aModule moduleName]];
+            if ([self.moduleMap valueForKey:[aModule moduleName]])
+            {
+                [self.moduleMap removeObjectForKey:[aModule moduleName]];
+            }
         }
     }
+    
     return YES;
 }
 
 - (BOOL)unregisterModuleByName:(NSString *)moduleName
 {
     SKModule *aModule = [self.moduleMap valueForKey:moduleName];
-    if (self.moduleMap)
+    
+    @synchronized (self.moduleList)
     {
-        if (aModule)
+        if (self.moduleList)
         {
-            [self.moduleMap removeObjectForKey:moduleName];
+            if ([self.moduleList containsObject:aModule])
+            {
+                [self.moduleList removeObject:aModule];
+            }
         }
     }
-    if (self.moduleList)
+
+    @synchronized (self.moduleMap)
     {
-        if ([self.moduleList containsObject:aModule])
+        if (self.moduleMap)
         {
-            [self.moduleList removeObject:aModule];
+            if (aModule)
+            {
+                [self.moduleMap removeObjectForKey:moduleName];
+            }
         }
     }
+    
     
     return YES;
 }
@@ -240,7 +265,8 @@
     }
     else if ([rootVC isKindOfClass:[UINavigationController class]])
     {
-        [(UINavigationController *)rootVC routeError:@"4040" errMsg:@"你请求的模块不存在"];
+        [(UINavigationController *)rootVC routeError:@"4040"
+                                              errMsg:@"你请求的模块不存在"];
     }
     else if ([rootVC isKindOfClass:[UIViewController class]])
     {

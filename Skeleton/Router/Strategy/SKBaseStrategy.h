@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import "SKRoutingStrategy.h"
 #import "SKRouter.h"
 
 @interface SKBaseStrategy : NSObject <SKRoutingStrategy>
-
-- (void)injectParams:(NSDictionary *)params inObject:(NSObject *)aObj;
 
 @end

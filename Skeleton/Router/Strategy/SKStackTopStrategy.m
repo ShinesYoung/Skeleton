@@ -18,7 +18,7 @@
 
 + (void)load
 {
-    [[SKRouter sharedRouter] registerStrategy:[SKStackTopStrategy new]];
+    [[SKRouter sharedRouter] registerStrategy:[SKStackTopStrategy class]];
 }
 
 /******************************************************************************/
@@ -28,26 +28,23 @@
 #pragma mark Strategy Protocol method
 
 
-- (NSString *)strategyName
++ (NSString *)strategyName
 {
-    return vRouteStgyNameStackTop;
+    return vStgyNameStackTop;
 }
 
-- (id)routing:(SKModule *)aModule action:(SEL)aSelector params:(NSDictionary *)params
++ (BOOL)routingData:(id)data params:(NSDictionary *)params
 {
-    //id result = [aModule performSelector:aSelector withObject:params];
-    IMP imp = [aModule methodForSelector:aSelector];
-    id (*func)(id, SEL) = (void *)imp;
-    id result = func(aModule, aSelector);
-    [self injectParams:params inObject:result];
+    UIViewController *rootVC
+    = [UIApplication sharedApplication].keyWindow.rootViewController;
     
-    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    if ([result isKindOfClass:[UIViewController class]] &&
+    if ([data   isKindOfClass:[UIViewController class]] &&
         [rootVC isKindOfClass:[UINavigationController class]])
     {
-        [(UINavigationController *)rootVC pushViewController:result animated:YES];
+        [(UINavigationController *)rootVC pushViewController:data animated:YES];
+        return YES;
     }
-    return result;
+    return NO;
 }
 
 @end

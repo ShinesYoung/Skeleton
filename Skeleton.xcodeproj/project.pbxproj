@@ -34,8 +34,6 @@
 		BE4351751E4DE6FF0037599E /* SKOpenURLModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4351731E4DE6FF0037599E /* SKOpenURLModule.m */; };
 		BEBD878E1E6459C800767B68 /* SKBaseStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBD877A1E6459C800767B68 /* SKBaseStrategy.h */; };
 		BEBD878F1E6459C800767B68 /* SKBaseStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD877B1E6459C800767B68 /* SKBaseStrategy.m */; };
-		BEBD87901E6459C800767B68 /* SKDataStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBD877C1E6459C800767B68 /* SKDataStrategy.h */; };
-		BEBD87911E6459C800767B68 /* SKDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD877D1E6459C800767B68 /* SKDataStrategy.m */; };
 		BEBD87921E6459C800767B68 /* SKDefaultStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBD877E1E6459C800767B68 /* SKDefaultStrategy.h */; };
 		BEBD87931E6459C800767B68 /* SKDefaultStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD877F1E6459C800767B68 /* SKDefaultStrategy.m */; };
 		BEBD87941E6459C800767B68 /* SKPresentStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBD87801E6459C800767B68 /* SKPresentStrategy.h */; };
@@ -52,6 +50,7 @@
 		BEBD879F1E6459C800767B68 /* SKStackTopStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD878B1E6459C800767B68 /* SKStackTopStrategy.m */; };
 		BEBD87A01E6459C800767B68 /* SKSubviewStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBD878C1E6459C800767B68 /* SKSubviewStrategy.h */; };
 		BEBD87A11E6459C800767B68 /* SKSubviewStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD878D1E6459C800767B68 /* SKSubviewStrategy.m */; };
+		BEBD87A31E645A4600767B68 /* SKRoutingStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBD87A21E645A4600767B68 /* SKRoutingStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,8 +83,6 @@
 		BE4351731E4DE6FF0037599E /* SKOpenURLModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKOpenURLModule.m; sourceTree = "<group>"; };
 		BEBD877A1E6459C800767B68 /* SKBaseStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKBaseStrategy.h; sourceTree = "<group>"; };
 		BEBD877B1E6459C800767B68 /* SKBaseStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKBaseStrategy.m; sourceTree = "<group>"; };
-		BEBD877C1E6459C800767B68 /* SKDataStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKDataStrategy.h; sourceTree = "<group>"; };
-		BEBD877D1E6459C800767B68 /* SKDataStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKDataStrategy.m; sourceTree = "<group>"; };
 		BEBD877E1E6459C800767B68 /* SKDefaultStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKDefaultStrategy.h; sourceTree = "<group>"; };
 		BEBD877F1E6459C800767B68 /* SKDefaultStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKDefaultStrategy.m; sourceTree = "<group>"; };
 		BEBD87801E6459C800767B68 /* SKPresentStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPresentStrategy.h; sourceTree = "<group>"; };
@@ -102,6 +99,7 @@
 		BEBD878B1E6459C800767B68 /* SKStackTopStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKStackTopStrategy.m; sourceTree = "<group>"; };
 		BEBD878C1E6459C800767B68 /* SKSubviewStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSubviewStrategy.h; sourceTree = "<group>"; };
 		BEBD878D1E6459C800767B68 /* SKSubviewStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSubviewStrategy.m; sourceTree = "<group>"; };
+		BEBD87A21E645A4600767B68 /* SKRoutingStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKRoutingStrategy.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,14 +200,13 @@
 			children = (
 				BEBD877A1E6459C800767B68 /* SKBaseStrategy.h */,
 				BEBD877B1E6459C800767B68 /* SKBaseStrategy.m */,
-				BEBD877C1E6459C800767B68 /* SKDataStrategy.h */,
-				BEBD877D1E6459C800767B68 /* SKDataStrategy.m */,
 				BEBD877E1E6459C800767B68 /* SKDefaultStrategy.h */,
 				BEBD877F1E6459C800767B68 /* SKDefaultStrategy.m */,
 				BEBD87801E6459C800767B68 /* SKPresentStrategy.h */,
 				BEBD87811E6459C800767B68 /* SKPresentStrategy.m */,
 				BEBD87821E6459C800767B68 /* SKRootStrategy.h */,
 				BEBD87831E6459C800767B68 /* SKRootStrategy.m */,
+				BEBD87A21E645A4600767B68 /* SKRoutingStrategy.h */,
 				BEBD87841E6459C800767B68 /* SKStackAboveBottomStrategy.h */,
 				BEBD87851E6459C800767B68 /* SKStackAboveBottomStrategy.m */,
 				BEBD87861E6459C800767B68 /* SKStackBottomStrategy.h */,
@@ -231,20 +228,20 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEBD878E1E6459C800767B68 /* SKBaseStrategy.h in Headers */,
 				BE4351641E4DE64E0037599E /* SKUtilModule.h in Headers */,
 				BE4351601E4DE5B50037599E /* SKBizModule.h in Headers */,
 				BE4351481E4DE4BD0037599E /* SKEnvironment.h in Headers */,
 				BE4351681E4DE6670037599E /* SKTPModule.h in Headers */,
 				BEBD879A1E6459C800767B68 /* SKStackBottomStrategy.h in Headers */,
 				BE4351541E4DE55A0037599E /* SKPage.h in Headers */,
-				BEBD87901E6459C800767B68 /* SKDataStrategy.h in Headers */,
 				BEBD879E1E6459C800767B68 /* SKStackTopStrategy.h in Headers */,
 				BE4351501E4DE4F40037599E /* UIApplication+Skeleton.h in Headers */,
 				BEBD879C1E6459C800767B68 /* SKStackPushAboveStrategy.h in Headers */,
 				BEBD87981E6459C800767B68 /* SKStackAboveBottomStrategy.h in Headers */,
 				BE43516C1E4DE6810037599E /* SKRouter.h in Headers */,
 				BEBD87961E6459C800767B68 /* SKRootStrategy.h in Headers */,
+				BEBD87A31E645A4600767B68 /* SKRoutingStrategy.h in Headers */,
+				BEBD878E1E6459C800767B68 /* SKBaseStrategy.h in Headers */,
 				BE43515C1E4DE5940037599E /* SKModule.h in Headers */,
 				BE4351581E4DE5810037599E /* UINavigationController+Skeleton.h in Headers */,
 				BE43514C1E4DE4D00037599E /* SKAppDelegate.h in Headers */,
@@ -329,7 +326,6 @@
 				BEBD87951E6459C800767B68 /* SKPresentStrategy.m in Sources */,
 				BE43516D1E4DE6810037599E /* SKRouter.m in Sources */,
 				BE4351451E4DE49F0037599E /* SKAppContext.m in Sources */,
-				BEBD87911E6459C800767B68 /* SKDataStrategy.m in Sources */,
 				BE4351691E4DE6670037599E /* SKTPModule.m in Sources */,
 				BE4351611E4DE5B50037599E /* SKBizModule.m in Sources */,
 				BE4351511E4DE4F40037599E /* UIApplication+Skeleton.m in Sources */,

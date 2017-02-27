@@ -8,37 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SKRoutingStrategy.h"
 
 #import "SKModule.h"
-
-@protocol SKRoutingStrategy <NSObject>
-
-- (NSString *_Nonnull)strategyName;
-
-- (id _Nullable)routing:(SKModule *_Nonnull)aModule
-                 action:(SEL _Nonnull)aSelector
-                 params:(NSDictionary *_Nullable)params;
-
-@end
-
-
-
-static NSString *_Nonnull const kPopToVC   = @"kPopToVC";
-static NSString *_Nonnull const kRouteStgy = @"kRouteStgy";
-
-static NSString *_Nonnull const vRouteStgyNameDefault          = @"Default";
-
-static NSString *_Nonnull const vRouteStgyNameStackBottom      = @"StackBottom";
-static NSString *_Nonnull const vRouteStgyNameStackTop         = @"StackTop";
-static NSString *_Nonnull const vRouteStgyNameStackAboveBottom = @"StackAboveBottom";
-static NSString *_Nonnull const vRouteStgyNameStackPushAbove   = @"StackPushAbove";
-
-static NSString *_Nonnull const vRouteStgyNameSubview = @"Subview";
-static NSString *_Nonnull const vRouteStgyNameData    = @"Data";
-static NSString *_Nonnull const vRouteStgyNameRoot    = @"Root";
-static NSString *_Nonnull const vRouteStgyNamePresent = @"Present";
-static NSString *_Nonnull const vRouteStgyNameWindow  = @"Window";
-
 
 
 /******************************************************************************/
@@ -82,8 +54,9 @@ static NSString *_Nonnull const vRouteStgyNameWindow  = @"Window";
 #pragma mark -
 #pragma mark Strategy register Method
 
-- (void)registerStrategy:(id<SKRoutingStrategy>_Nonnull)aStrategy;
-- (void)unregisterStrategy:(NSString *_Nonnull)strategyName;
+- (void)registerStrategy:(Class _Nonnull)aStgyClass;
+- (void)unregisterStrategy:(NSString *_Nonnull)aStrgyName;
+- (Class _Nullable)strategyForName:(NSString *_Nonnull)aStrgyName;
 
 
 
@@ -107,9 +80,8 @@ static NSString *_Nonnull const vRouteStgyNameWindow  = @"Window";
 #pragma mark -
 #pragma mark Route Page Function
 
-- (UIViewController *_Nullable)routePage:(NSString *_Nonnull)pageName
-                                inModule:(NSString *_Nonnull)moduleName
-                                  params:(NSDictionary *_Nullable)params;
+- (id _Nullable)routePage:(UIViewController *_Nonnull)aPage
+                   params:(NSDictionary *_Nullable)params;
 
 
 
@@ -122,6 +94,17 @@ static NSString *_Nonnull const vRouteStgyNameWindow  = @"Window";
 
 - (void)routeError:(NSString *_Nullable)errCode
             errMsg:(NSString *_Nullable)errMsg;
+
+
+
+/******************************************************************************/
+/**** Parameters Injection Function                                        ****/
+/******************************************************************************/
+#pragma mark -
+#pragma mark Route Error Function
+
+- (void)injectParams:(NSDictionary *_Nullable)params
+            inObject:(NSObject *_Nullable)aObj;
 
 
 /******************************************************************************/

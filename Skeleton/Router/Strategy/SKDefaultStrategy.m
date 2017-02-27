@@ -18,7 +18,7 @@
 
 + (void)load
 {
-    [[SKRouter sharedRouter] registerStrategy:[SKDefaultStrategy new]];
+    [[SKRouter sharedRouter] registerStrategy:[SKDefaultStrategy class]];
 }
 
 /******************************************************************************/
@@ -28,19 +28,14 @@
 #pragma mark Strategy Protocol method
 
 
-- (NSString *)strategyName
++ (NSString *)strategyName
 {
-    return vRouteStgyNameDefault;
+    return vStgyNameDefault;
 }
 
-- (id)routing:(SKModule *)aModule action:(SEL)aSelector params:(NSDictionary *)params
++ (BOOL)routingData:(id)data params:(NSDictionary *)params
 {
-    IMP imp = [aModule methodForSelector:aSelector];
-    id (*func)(id, SEL) = (void *)imp;
-    id result = func(aModule, aSelector);
-    
-    [self injectParams:params inObject:result];
-    return result;
+    return YES;
 }
 
 @end

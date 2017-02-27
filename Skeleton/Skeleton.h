@@ -20,6 +20,7 @@ FOUNDATION_EXPORT const unsigned char SkeletonVersionString[];
 #import <Skeleton/SKAppContext.h>
 #import <Skeleton/SKEnvironment.h>
 #import <Skeleton/SKRouter.h>
+#import <Skeleton/SKRoutingStrategy.h>
 #import <Skeleton/SKModule.h>
 #import <Skeleton/SKPage.h>
 

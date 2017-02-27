@@ -18,7 +18,7 @@
 
 + (void)load
 {
-    [[SKRouter sharedRouter] registerStrategy:[SKPresentStrategy new]];
+    [[SKRouter sharedRouter] registerStrategy:[SKPresentStrategy class]];
 }
 
 /******************************************************************************/
@@ -28,25 +28,22 @@
 #pragma mark Strategy Protocol method
 
 
-- (NSString *)strategyName
++ (NSString *)strategyName
 {
-    return vRouteStgyNamePresent;
+    return vStgyNamePresent;
 }
 
-- (id)routing:(SKModule *)aModule action:(SEL)aSelector params:(NSDictionary *)params
++ (BOOL)routingData:(id)data params:(NSDictionary *)params
 {
-    //id result = [aModule performSelector:aSelector withObject:params];
-    IMP imp = [aModule methodForSelector:aSelector];
-    id (*func)(id, SEL) = (void *)imp;
-    id result = func(aModule, aSelector);
-    [self injectParams:params inObject:result];
+    UIViewController *rootVC
+    = [UIApplication sharedApplication].keyWindow.rootViewController;
     
-    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    if ([result isKindOfClass:[UIViewController class]])
+    if ([data isKindOfClass:[UIViewController class]])
     {
-        [rootVC presentViewController:result animated:YES completion:nil];
+        [rootVC presentViewController:data animated:YES completion:nil];
+        return YES;
     }
-    return result;
+    return NO;
 }
 
 @end

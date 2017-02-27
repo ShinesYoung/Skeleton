@@ -18,7 +18,7 @@
 
 + (void)load
 {
-    [[SKRouter sharedRouter] registerStrategy:[SKStackBottomStrategy new]];
+    [[SKRouter sharedRouter] registerStrategy:[SKStackBottomStrategy class]];
 }
 
 /******************************************************************************/
@@ -28,30 +28,26 @@
 #pragma mark Strategy Protocol method
 
 
-- (NSString *)strategyName
++ (NSString *)strategyName
 {
-    return vRouteStgyNameStackBottom;
+    return vStgyNameStackBottom;
 }
 
-- (id)routing:(SKModule *)aModule action:(SEL)aSelector params:(NSDictionary *)params
++ (BOOL)routingData:(id)data params:(NSDictionary *)params
 {
-    //id result = [aModule performSelector:aSelector withObject:params];
-    IMP imp = [aModule methodForSelector:aSelector];
-    id (*func)(id, SEL) = (void *)imp;
-    id result = func(aModule, aSelector);
+    UIViewController *rootVC
+    = [UIApplication sharedApplication].keyWindow.rootViewController;
     
-    [self injectParams:params inObject:result];
-    
-    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    if ([result isKindOfClass:[UIViewController class]] &&
+    if ([data   isKindOfClass:[UIViewController class]] &&
         [rootVC isKindOfClass:[UINavigationController class]])
     {
         UINavigationController *rootNC = (UINavigationController *)rootVC;
         
         [rootNC popToRootViewControllerAnimated:NO];
-        rootNC.viewControllers = @[result];
+        rootNC.viewControllers = @[data];
+        return YES;
     }
-    return result;
+    return NO;
 }
 
 @end

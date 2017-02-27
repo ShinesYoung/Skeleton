@@ -159,20 +159,34 @@
 #pragma mark -
 #pragma mark Strategy register & unregister Method
 
-- (void)registerStrategy:(id<SKRoutingStrategy>_Nonnull)aStrategy
+- (void)registerStrategy:(Class _Nonnull)aStgyClass
 {
-    if (self.strategyMap && aStrategy)
+    @synchronized (self.strategyMap)
     {
-        [self.strategyMap setValue:aStrategy
-                            forKey:[aStrategy strategyName]];
+        if (self.strategyMap && aStgyClass)
+        {
+            [self.strategyMap setValue:aStgyClass
+                                forKey:[aStgyClass strategyName]];
+        }
     }
 }
 
 - (void)unregisterStrategy:(NSString *_Nonnull)strategyName
 {
-    if (self.strategyMap && strategyName)
+    @synchronized (self.strategyMap)
     {
-        [self.strategyMap removeObjectForKey:strategyName];
+        if (self.strategyMap && strategyName)
+        {
+            [self.strategyMap removeObjectForKey:strategyName];
+        }
+    }
+}
+
+- (Class)strategyForName:(NSString *)aStrgyName
+{
+    @synchronized (self.strategyMap)
+    {
+        return [self.strategyMap valueForKey:aStrgyName];
     }
 }
 
@@ -196,23 +210,33 @@
         return nil;
     }
     
-    SEL selector = NSSelectorFromString(actionName);
-    if (selector == nil || [aModule respondsToSelector:selector] == NO)
+    SEL aSelector = NSSelectorFromString(actionName);
+    if (aSelector == nil || [aModule respondsToSelector:aSelector] == NO)
     {
         [self routeError:@"4041" errMsg:@"你请求的功能不存在"];
         return nil;
     }
     
+    IMP imp = [aModule methodForSelector:aSelector];
+    id (*func)(id, SEL, ...) = (void *)imp;
+    id data = func(aModule, aSelector, params);
+    
     NSString *strategyName = [params valueForKey:kRouteStgy];
     if (strategyName == nil)
     {
-        strategyName = vRouteStgyNameDefault;
+        strategyName = vStgyNameDefault;
     }
     
-    id<SKRoutingStrategy> aStrategy = [self.strategyMap valueForKey:strategyName];
+    Class aStrgyClass = [self strategyForName:strategyName];
+    if (strategyName == nil)
+    {
+        [self routeError:@"4042" errMsg:@"你请求的路由不存在"];
+        return nil;
+    }
     
-    return [aStrategy routing:aModule action:selector params:params];
+    [aStrgyClass routingData:data params:params];
     
+    return data;
 }
 
 
@@ -225,18 +249,29 @@
 #pragma mark -
 #pragma mark Route Page Function
 
-- (UIViewController *)routePage:(NSString *_Nonnull)pageName
-                       inModule:(NSString *_Nonnull)moduleName
-                         params:(NSDictionary *_Nullable)params
+- (id)routePage:(UIViewController *)aPage params:(NSDictionary *)params
 {
-    NSString *actionName = [NSString stringWithFormat:@"launch%@", pageName];
-    
-    id result = [self invokeModule:moduleName action:actionName params:params];
-    if ([result isKindOfClass:[UIViewController class]])
+    if (aPage == nil || [aPage isKindOfClass:[NSNull class]])
     {
-        return (UIViewController *)result;
+        return nil;
     }
-    return nil;
+    
+    NSString *strategyName = [params valueForKey:kRouteStgy];
+    if (strategyName == nil)
+    {
+        strategyName = vStgyNameDefault;
+    }
+    
+    id<SKRoutingStrategy> aStrategy = [self.strategyMap valueForKey:strategyName];
+    if (strategyName == nil)
+    {
+        [self routeError:@"4042" errMsg:@"你请求的路由不存在"];
+        return nil;
+    }
+    
+    [aStrategy routingData:aPage params:params];
+    
+    return aPage;
 }
 
 
@@ -285,6 +320,39 @@
         [alert addAction:confirm];
         
         [rootVC presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+
+
+/******************************************************************************/
+/**** Parameters Injection Function                                        ****/
+/******************************************************************************/
+#pragma mark -
+#pragma mark Route Error Function
+
+- (void)injectParams:(NSDictionary *)params inObject:(NSObject *)aObj
+{
+    if ([aObj isKindOfClass:[NSObject class]] == NO)
+    {
+        return;
+    }
+    
+    for (NSString *aKey in params.allKeys)
+    {
+        id value = [aObj valueForKey:aKey];
+        NSLog(@"KVC check : value=%@", value);
+        
+        NSString *aValue = [params valueForKey:aKey];
+        NSLog(@"aK=%@ aV=%@",aKey, aValue);
+        SEL aSelector = NSSelectorFromString([NSString stringWithFormat:@"set%@%@:",
+                                              [[aKey substringToIndex:1] uppercaseString],
+                                              [aKey substringFromIndex:1]]);
+        if ([aObj respondsToSelector:aSelector])
+        {
+            [aObj setValue:aValue forKey:aKey];
+        }
+        
     }
 }
 

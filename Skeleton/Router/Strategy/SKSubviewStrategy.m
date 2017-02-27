@@ -18,7 +18,7 @@
 
 + (void)load
 {
-    [[SKRouter sharedRouter] registerStrategy:[SKSubviewStrategy new]];
+    [[SKRouter sharedRouter] registerStrategy:[SKSubviewStrategy class]];
 }
 
 /******************************************************************************/
@@ -28,29 +28,25 @@
 #pragma mark Strategy Protocol method
 
 
-- (NSString *)strategyName
++ (NSString *)strategyName
 {
-    return vRouteStgyNameSubview;
+    return vStgyNameSubview;
 }
 
-- (id)routing:(SKModule *)aModule action:(SEL)aSelector params:(NSDictionary *)params
++ (BOOL)routingData:(id)data params:(NSDictionary *)params
 {
-    //id result = [aModule performSelector:aSelector withObject:params];
-    IMP imp = [aModule methodForSelector:aSelector];
-    id (*func)(id, SEL) = (void *)imp;
-    id result = func(aModule, aSelector);
-    [self injectParams:params inObject:result];
+    UIViewController *rootVC
+    = [UIApplication sharedApplication].keyWindow.rootViewController;
     
-    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    if ([result isKindOfClass:[UIViewController class]] &&
-        [rootVC isKindOfClass:[UIViewController class]])
+    if ([data isKindOfClass:[UIViewController class]])
     {
-        UIViewController *subVC = (UIViewController *)result;
+        UIViewController *subVC = (UIViewController *)data;
         
         [rootVC.view addSubview:subVC.view];
         [rootVC addChildViewController:subVC];
+        return YES;
     }
-    return result;
+    return NO;
 }
 
 @end

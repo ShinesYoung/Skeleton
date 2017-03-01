@@ -221,14 +221,14 @@
     id (*func)(id, SEL, ...) = (void *)imp;
     id data = func(aModule, aSelector, params);
     
-    NSString *strategyName = [params valueForKey:kRouteStgy];
-    if (strategyName == nil)
+    NSString *aStrgyName = [params valueForKey:kRouteStgy];
+    if (aStrgyName == nil)
     {
-        strategyName = vStgyNameDefault;
+        aStrgyName = vStgyNameDefault;
     }
     
-    Class aStrgyClass = [self strategyForName:strategyName];
-    if (strategyName == nil)
+    Class aStrgyClass = [self strategyForName:aStrgyName];
+    if (aStrgyClass == nil)
     {
         [self routeError:@"4042" errMsg:@"你请求的路由不存在"];
         return nil;
@@ -256,20 +256,20 @@
         return nil;
     }
     
-    NSString *strategyName = [params valueForKey:kRouteStgy];
-    if (strategyName == nil)
+    NSString *aStrgyName = [params valueForKey:kRouteStgy];
+    if (aStrgyName == nil)
     {
-        strategyName = vStgyNameDefault;
+        aStrgyName = vStgyNameDefault;
     }
     
-    id<SKRoutingStrategy> aStrategy = [self.strategyMap valueForKey:strategyName];
-    if (strategyName == nil)
+    Class aStrgyClass = [self strategyForName:aStrgyName];
+    if (aStrgyClass == nil)
     {
         [self routeError:@"4042" errMsg:@"你请求的路由不存在"];
         return nil;
     }
     
-    [aStrategy routingData:aPage params:params];
+    [aStrgyClass routingData:aPage params:params];
     
     return aPage;
 }

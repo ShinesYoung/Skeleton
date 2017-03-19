@@ -10,6 +10,6 @@
 
 #import "SKModule.h"
 
-@interface SKOpenURLModule : SKModule
+@interface SKURLRouter : SKModule
 
 @end

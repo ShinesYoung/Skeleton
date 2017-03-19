@@ -6,14 +6,14 @@
 //  Copyright © 2017年 IDEA. All rights reserved.
 //
 
-#import "SKOpenURLModule.h"
+#import "SKURLRouter.h"
 
 #import "SKRouter.h"
 #import "UIApplication+Skeleton.h"
 
 
 
-@implementation SKOpenURLModule
+@implementation SKURLRouter
 
 /******************************************************************************/
 /**** Module Loading method                                                ****/
@@ -23,7 +23,7 @@
 
 + (void)load
 {
-    [[SKRouter sharedRouter] registerModule:[SKOpenURLModule new]];
+    [[SKRouter sharedRouter] registerModule:[SKURLRouter new]];
 }
 
 
@@ -111,7 +111,7 @@
 // iOS 9.0 below
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    if ([[SKOpenURLModule appScheme] isEqualToString:url.scheme])
+    if ([[SKURLRouter appScheme] isEqualToString:url.scheme])
     {
         return YES;
     }
@@ -124,7 +124,7 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation
 {
-    if ([[SKOpenURLModule appScheme] isEqualToString:url.scheme])
+    if ([[SKURLRouter appScheme] isEqualToString:url.scheme])
     {
         return [self processOpenURL:url];
     }
@@ -135,7 +135,7 @@
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
             options:(NSDictionary<NSString *,id> *)options
 {
-    if ([[SKOpenURLModule appScheme] isEqualToString:url.scheme])
+    if ([[SKURLRouter appScheme] isEqualToString:url.scheme])
     {
         return [self processOpenURL:url];
     }

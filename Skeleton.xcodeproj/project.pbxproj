@@ -30,8 +30,8 @@
 		BE4351691E4DE6670037599E /* SKTPModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4351671E4DE6670037599E /* SKTPModule.m */; };
 		BE43516C1E4DE6810037599E /* SKRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = BE43516A1E4DE6810037599E /* SKRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE43516D1E4DE6810037599E /* SKRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43516B1E4DE6810037599E /* SKRouter.m */; };
-		BE4351741E4DE6FF0037599E /* SKOpenURLModule.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351721E4DE6FF0037599E /* SKOpenURLModule.h */; };
-		BE4351751E4DE6FF0037599E /* SKOpenURLModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4351731E4DE6FF0037599E /* SKOpenURLModule.m */; };
+		BE4351741E4DE6FF0037599E /* SKURLRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351721E4DE6FF0037599E /* SKURLRouter.h */; };
+		BE4351751E4DE6FF0037599E /* SKURLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4351731E4DE6FF0037599E /* SKURLRouter.m */; };
 		BEBD878E1E6459C800767B68 /* SKBaseStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBD877A1E6459C800767B68 /* SKBaseStrategy.h */; };
 		BEBD878F1E6459C800767B68 /* SKBaseStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD877B1E6459C800767B68 /* SKBaseStrategy.m */; };
 		BEBD87921E6459C800767B68 /* SKDefaultStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBD877E1E6459C800767B68 /* SKDefaultStrategy.h */; };
@@ -79,8 +79,8 @@
 		BE4351671E4DE6670037599E /* SKTPModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTPModule.m; sourceTree = "<group>"; };
 		BE43516A1E4DE6810037599E /* SKRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKRouter.h; sourceTree = "<group>"; };
 		BE43516B1E4DE6810037599E /* SKRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKRouter.m; sourceTree = "<group>"; };
-		BE4351721E4DE6FF0037599E /* SKOpenURLModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKOpenURLModule.h; sourceTree = "<group>"; };
-		BE4351731E4DE6FF0037599E /* SKOpenURLModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKOpenURLModule.m; sourceTree = "<group>"; };
+		BE4351721E4DE6FF0037599E /* SKURLRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKURLRouter.h; sourceTree = "<group>"; };
+		BE4351731E4DE6FF0037599E /* SKURLRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKURLRouter.m; sourceTree = "<group>"; };
 		BEBD877A1E6459C800767B68 /* SKBaseStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKBaseStrategy.h; sourceTree = "<group>"; };
 		BEBD877B1E6459C800767B68 /* SKBaseStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKBaseStrategy.m; sourceTree = "<group>"; };
 		BEBD877E1E6459C800767B68 /* SKDefaultStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKDefaultStrategy.h; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				BEBD87791E6459C800767B68 /* Strategy */,
-				BE4351721E4DE6FF0037599E /* SKOpenURLModule.h */,
-				BE4351731E4DE6FF0037599E /* SKOpenURLModule.m */,
+				BE4351721E4DE6FF0037599E /* SKURLRouter.h */,
+				BE4351731E4DE6FF0037599E /* SKURLRouter.m */,
 				BE43516A1E4DE6810037599E /* SKRouter.h */,
 				BE43516B1E4DE6810037599E /* SKRouter.m */,
 			);
@@ -247,7 +247,7 @@
 				BE43514C1E4DE4D00037599E /* SKAppDelegate.h in Headers */,
 				BEBD87941E6459C800767B68 /* SKPresentStrategy.h in Headers */,
 				BE4351441E4DE49F0037599E /* SKAppContext.h in Headers */,
-				BE4351741E4DE6FF0037599E /* SKOpenURLModule.h in Headers */,
+				BE4351741E4DE6FF0037599E /* SKURLRouter.h in Headers */,
 				BE4351381E4DE4290037599E /* Skeleton.h in Headers */,
 				BEBD87A01E6459C800767B68 /* SKSubviewStrategy.h in Headers */,
 				BEBD87921E6459C800767B68 /* SKDefaultStrategy.h in Headers */,
@@ -343,7 +343,7 @@
 				BE4351651E4DE64E0037599E /* SKUtilModule.m in Sources */,
 				BEBD87931E6459C800767B68 /* SKDefaultStrategy.m in Sources */,
 				BE43515D1E4DE5940037599E /* SKModule.m in Sources */,
-				BE4351751E4DE6FF0037599E /* SKOpenURLModule.m in Sources */,
+				BE4351751E4DE6FF0037599E /* SKURLRouter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

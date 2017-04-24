@@ -300,8 +300,7 @@
     }
     else if ([rootVC isKindOfClass:[UINavigationController class]])
     {
-        [(UINavigationController *)rootVC routeError:@"4040"
-                                              errMsg:@"你请求的模块不存在"];
+        [(UINavigationController *)rootVC routeError:errCode errMsg:errMsg];
     }
     else if ([rootVC isKindOfClass:[UIViewController class]])
     {

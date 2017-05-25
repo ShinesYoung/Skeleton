@@ -9,6 +9,7 @@
 #import "SKRouter.h"
 
 #import "UINavigationController+Skeleton.h"
+#import "DynamicInvocator.h"
 
 
 
@@ -18,6 +19,7 @@
 @property (nonatomic, strong, readonly) NSMutableDictionary *moduleMap;
 @property (nonatomic, strong, readonly) NSMutableDictionary *strategyMap;
 
+@property (nonatomic, strong, readonly) DynamicInvocator *invocator;
 
 @end
 
@@ -217,10 +219,13 @@
         return nil;
     }
     
-    IMP imp = [aModule methodForSelector:aSelector];
-    id (*func)(id, SEL, ...) = (void *)imp;
-    id data = func(aModule, aSelector, params);
+    NSLog(@"invokeModule get params %@", params);
     
+    id data = [self.invocator invokeInstance:aModule
+                                    selector:aSelector
+                                      params:params];
+    
+    // get strategy
     NSString *aStrgyName = [params valueForKey:kRouteStgy];
     if (aStrgyName == nil)
     {
@@ -390,6 +395,7 @@
         self->_moduleList = [NSMutableArray new];
         self->_moduleMap = [NSMutableDictionary new];
         self->_strategyMap = [NSMutableDictionary dictionary];
+        self->_invocator = [DynamicInvocator new];
     }
     return self;
 }

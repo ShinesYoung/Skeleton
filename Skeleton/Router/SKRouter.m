@@ -219,11 +219,13 @@
         return nil;
     }
     
-    NSLog(@"invokeModule get params %@", params);
+    NSLog(@"Router get params %@", params);
     
     id data = [self.invocator invokeInstance:aModule
                                     selector:aSelector
                                       params:params];
+    
+    NSLog(@"Router get result %@", data);
     
     // get strategy
     NSString *aStrgyName = [params valueForKey:kRouteStgy];
@@ -232,6 +234,7 @@
         aStrgyName = vStgyNameDefault;
     }
     
+    NSLog(@"Router get strgyName %@", aStrgyName);
     Class aStrgyClass = [self strategyForName:aStrgyName];
     if (aStrgyClass == nil)
     {
@@ -239,7 +242,8 @@
         return nil;
     }
     
-    [aStrgyClass routingData:data params:params];
+    BOOL routeResult = [aStrgyClass routingData:data params:params];
+    NSLog(@"Routing Result %@", routeResult ? @"Y" : @"N");
     
     return data;
 }
@@ -274,7 +278,8 @@
         return nil;
     }
     
-    [aStrgyClass routingData:aPage params:params];
+    BOOL routeResult = [aStrgyClass routingData:aPage params:params];
+    NSLog(@"Routing Result %@", routeResult ? @"Y" : @"N");
     
     return aPage;
 }

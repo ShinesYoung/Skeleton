@@ -19,4 +19,9 @@
 
 - (id)invokeInstance:(id)aOjbect selector:(SEL)aSelector params:(NSDictionary *)params;
 
+- (id)invokeObject:(id)aObject selector:(SEL)aSelector
+        returnType:(unsigned char)returnType
+   typeOfArguments:(NSArray *)typeOfArguments
+         arguments:(NSArray *)arguments;
+
 @end

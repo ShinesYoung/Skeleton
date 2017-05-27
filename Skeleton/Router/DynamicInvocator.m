@@ -43,69 +43,74 @@
     IMP imp = [aOjbect methodForSelector:aSelector];
     if      (strcmp("v", retType) == 0)  // return void
     {
-        void (*func)(id, SEL, ...) = (void *)imp;
+        void (*func)(id, SEL, id) = (void *)imp;
         func(aOjbect, aSelector, params);
     }
     else if (strcmp("@", retType) == 0)  // return id
     {
-        id   (*func)(id, SEL, ...) = (void *)imp;
+        id   (*func)(id, SEL, id) = (void *)imp;
         id data = func(aOjbect, aSelector, params);
         return data;
     }
     else if (strcmp("B", retType) == 0)   // return BOOL
     {
-        BOOL (*func)(id, SEL, ...) = (void *)imp;
+        BOOL (*func)(id, SEL, id) = (void *)imp;
         BOOL boolResult = func(aOjbect, aSelector, params);
         return [NSNumber numberWithBool:boolResult];
     }
     else if (strcmp("i", retType) == 0)   // return int
     {
-        int  (*func)(id, SEL, ...) = (void *)imp;
+        int  (*func)(id, SEL, id) = (void *)imp;
         int intResult = func(aOjbect, aSelector, params);
         return [NSNumber numberWithInt:intResult];
     }
     else if (strcmp("I", retType) == 0)   // return unsigned int
     {
-        unsigned int  (*func)(id, SEL, ...) = (void *)imp;
+        unsigned int  (*func)(id, SEL, id) = (void *)imp;
         unsigned int intResult = func(aOjbect, aSelector, params);
         return [NSNumber numberWithUnsignedInt:intResult];
     }
     else if (strcmp("q", retType) == 0)   // return long
     {
-        long (*func)(id, SEL, ...) = (void *)imp;
+        long (*func)(id, SEL, id) = (void *)imp;
         long longResult = func(aOjbect, aSelector, params);
         return [NSNumber numberWithLong:longResult];
     }
     else if (strcmp("Q", retType) == 0)   // return unsigned long
     {
-        unsigned long (*func)(id, SEL, ...) = (void *)imp;
+        unsigned long (*func)(id, SEL, id) = (void *)imp;
         unsigned long longResult = func(aOjbect, aSelector, params);
         return [NSNumber numberWithUnsignedLong:longResult];
     }
     else if (strcmp("f", retType) == 0)   // return float
     {
-        float (*func)(id, SEL, ...) = (void *)imp;
+        float (*func)(id, SEL, id) = (void *)imp;
         float floatResult = func(aOjbect, aSelector, params);
         return [NSNumber numberWithFloat:floatResult];
     }
     else if (strcmp("d", retType) == 0)   // return double
     {
-        double (*func)(id, SEL, ...) = (void *)imp;
+        double (*func)(id, SEL, id) = (void *)imp;
         double doubleResult = func(aOjbect, aSelector, params);
         return [NSNumber numberWithDouble:doubleResult];
     }
     else if (strcmp("c", retType) == 0)   // return char
     {
-        char (*func)(id, SEL, ...) = (void *)imp;
+        char (*func)(id, SEL, id) = (void *)imp;
         char charResult = func(aOjbect, aSelector, params);
         return [NSNumber numberWithChar:charResult];
     }
     else if (strcmp("C", retType) == 0)   // return unsigned char
     {
-        unsigned char (*func)(id, SEL, ...) = (void *)imp;
+        unsigned char (*func)(id, SEL, id) = (void *)imp;
         unsigned char charResult = func(aOjbect, aSelector, params);
         return [NSNumber numberWithUnsignedChar:charResult];
     }
+    return nil;
+}
+
+- (id)invokeObject:(id)aObject selector:(SEL)aSelector returnType:(unsigned char)returnType typeOfArguments:(NSArray *)typeOfArguments arguments:(NSArray *)arguments
+{
     return nil;
 }
 

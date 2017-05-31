@@ -49,6 +49,7 @@
     else if (strcmp("@", retType) == 0)  // return id
     {
         id   (*func)(id, SEL, id) = (void *)imp;
+        
         id data = func(aOjbect, aSelector, params);
         return data;
     }
@@ -109,8 +110,13 @@
     return nil;
 }
 
-- (id)invokeObject:(id)aObject selector:(SEL)aSelector returnType:(unsigned char)returnType typeOfArguments:(NSArray *)typeOfArguments arguments:(NSArray *)arguments
+- (id)invokeObject:(id)aObject
+          selector:(SEL)aSelector
+        returnType:(unsigned char)returnType
+         arguments:(id)arguments, ...
 {
+    
+    
     return nil;
 }
 

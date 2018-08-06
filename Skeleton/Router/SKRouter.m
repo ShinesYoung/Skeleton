@@ -219,13 +219,13 @@
         return nil;
     }
     
-    NSLog(@"Router get params %@", params);
+//    NSLog(@"Router get params %@", params);
     
     id data = [self.invocator invokeInstance:aModule
                                     selector:aSelector
                                       params:params];
     
-    NSLog(@"Router get result %@", data);
+//    NSLog(@"Router get result %@", data);
     
     // get strategy
     NSString *aStrgyName = [params valueForKey:kRouteStgy];
@@ -234,7 +234,7 @@
         aStrgyName = vStgyNameDefault;
     }
     
-    NSLog(@"Router get strgyName %@", aStrgyName);
+//    NSLog(@"Router get strgyName %@", aStrgyName);
     Class aStrgyClass = [self strategyForName:aStrgyName];
     if (aStrgyClass == nil)
     {

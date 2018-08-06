@@ -7,6 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B97E3041EE9215B00CF7DEF /* SKAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4351431E4DE49F0037599E /* SKAppContext.m */; };
+		7B97E3061EE9215B00CF7DEF /* SKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43514B1E4DE4D00037599E /* SKAppDelegate.m */; };
+		7B97E3081EE9215B00CF7DEF /* SKEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4351471E4DE4BD0037599E /* SKEnvironment.m */; };
+		7B97E30A1EE9215B00CF7DEF /* UIApplication+Skeleton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43514F1E4DE4F40037599E /* UIApplication+Skeleton.m */; };
+		7B97E30B1EE9217300CF7DEF /* SKPage.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4351531E4DE55A0037599E /* SKPage.m */; };
+		7B97E30C1EE9217300CF7DEF /* UINavigationController+Skeleton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4351571E4DE5810037599E /* UINavigationController+Skeleton.m */; };
+		7B97E30D1EE9217300CF7DEF /* SKBizModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43515F1E4DE5B50037599E /* SKBizModule.m */; };
+		7B97E30E1EE9217300CF7DEF /* SKModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43515B1E4DE5940037599E /* SKModule.m */; };
+		7B97E30F1EE9217300CF7DEF /* SKTPModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4351671E4DE6670037599E /* SKTPModule.m */; };
+		7B97E3101EE9217300CF7DEF /* SKUtilModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4351631E4DE64E0037599E /* SKUtilModule.m */; };
+		7B97E3111EE9219300CF7DEF /* SKBaseStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD877B1E6459C800767B68 /* SKBaseStrategy.m */; };
+		7B97E3121EE9219300CF7DEF /* SKDefaultStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD877F1E6459C800767B68 /* SKDefaultStrategy.m */; };
+		7B97E3131EE9219300CF7DEF /* SKPresentStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD87811E6459C800767B68 /* SKPresentStrategy.m */; };
+		7B97E3141EE9219300CF7DEF /* SKRootStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD87831E6459C800767B68 /* SKRootStrategy.m */; };
+		7B97E3151EE9219300CF7DEF /* SKStackAboveBottomStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD87851E6459C800767B68 /* SKStackAboveBottomStrategy.m */; };
+		7B97E3161EE9219300CF7DEF /* SKStackBottomStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD87871E6459C800767B68 /* SKStackBottomStrategy.m */; };
+		7B97E3171EE9219300CF7DEF /* SKStackPushAboveStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD87891E6459C800767B68 /* SKStackPushAboveStrategy.m */; };
+		7B97E3181EE9219300CF7DEF /* SKStackTopStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD878B1E6459C800767B68 /* SKStackTopStrategy.m */; };
+		7B97E3191EE9219300CF7DEF /* SKSubviewStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBD878D1E6459C800767B68 /* SKSubviewStrategy.m */; };
+		7B97E31A1EE9219300CF7DEF /* SKURLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4351731E4DE6FF0037599E /* SKURLRouter.m */; };
+		7B97E31B1EE9219300CF7DEF /* SKRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE43516B1E4DE6810037599E /* SKRouter.m */; };
+		7B97E31C1EE9219300CF7DEF /* DynamicInvocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE610D51ED5BEE200720CC6 /* DynamicInvocator.m */; };
+		7B97E31E1EE9226D00CF7DEF /* SKAppContext.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351421E4DE49F0037599E /* SKAppContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E31F1EE9226D00CF7DEF /* SKAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BE43514A1E4DE4D00037599E /* SKAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E3201EE9226D00CF7DEF /* SKEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351461E4DE4BD0037599E /* SKEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E3211EE9226D00CF7DEF /* UIApplication+Skeleton.h in Headers */ = {isa = PBXBuildFile; fileRef = BE43514E1E4DE4F40037599E /* UIApplication+Skeleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E3221EE9226D00CF7DEF /* SKPage.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351521E4DE55A0037599E /* SKPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E3231EE9226D00CF7DEF /* UINavigationController+Skeleton.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351561E4DE5810037599E /* UINavigationController+Skeleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E3241EE9226D00CF7DEF /* SKBizModule.h in Headers */ = {isa = PBXBuildFile; fileRef = BE43515E1E4DE5B50037599E /* SKBizModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E3251EE9226D00CF7DEF /* SKModule.h in Headers */ = {isa = PBXBuildFile; fileRef = BE43515A1E4DE5940037599E /* SKModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E3261EE9226D00CF7DEF /* SKTPModule.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351661E4DE6670037599E /* SKTPModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E3271EE9226D00CF7DEF /* SKUtilModule.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351621E4DE64E0037599E /* SKUtilModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E3281EE9226D00CF7DEF /* SKBaseStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBD877A1E6459C800767B68 /* SKBaseStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E3291EE9226D00CF7DEF /* SKRoutingStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBD87A21E645A4600767B68 /* SKRoutingStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E32A1EE9226D00CF7DEF /* SKURLRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351721E4DE6FF0037599E /* SKURLRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E32B1EE9226D00CF7DEF /* SKRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = BE43516A1E4DE6810037599E /* SKRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E32C1EE9226D00CF7DEF /* DynamicInvocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BE610D41ED5BEE200720CC6 /* DynamicInvocator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B97E32D1EE9226D00CF7DEF /* Skeleton.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351361E4DE4290037599E /* Skeleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BA67FE71F301C7A00267FDD /* SKWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BA67FE51F301C7A00267FDD /* SKWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BA67FE81F301C7A00267FDD /* SKWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA67FE61F301C7A00267FDD /* SKWindow.m */; };
 		7BE610D61ED5BEE200720CC6 /* DynamicInvocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BE610D41ED5BEE200720CC6 /* DynamicInvocator.h */; };
 		7BE610D71ED5BEE200720CC6 /* DynamicInvocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE610D51ED5BEE200720CC6 /* DynamicInvocator.m */; };
 		BE4351381E4DE4290037599E /* Skeleton.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4351361E4DE4290037599E /* Skeleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,6 +96,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B97E2FA1EE9212100CF7DEF /* libSkeleton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSkeleton.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BA67FE51F301C7A00267FDD /* SKWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKWindow.h; sourceTree = "<group>"; };
+		7BA67FE61F301C7A00267FDD /* SKWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKWindow.m; sourceTree = "<group>"; };
 		7BE610D41ED5BEE200720CC6 /* DynamicInvocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicInvocator.h; sourceTree = "<group>"; };
 		7BE610D51ED5BEE200720CC6 /* DynamicInvocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicInvocator.m; sourceTree = "<group>"; };
 		BE4351331E4DE4290037599E /* Skeleton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Skeleton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +150,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7B97E2F71EE9212100CF7DEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE43512F1E4DE4290037599E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				BE4351331E4DE4290037599E /* Skeleton.framework */,
+				7B97E2FA1EE9212100CF7DEF /* libSkeleton.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +217,8 @@
 			children = (
 				BE4351521E4DE55A0037599E /* SKPage.h */,
 				BE4351531E4DE55A0037599E /* SKPage.m */,
+				7BA67FE51F301C7A00267FDD /* SKWindow.h */,
+				7BA67FE61F301C7A00267FDD /* SKWindow.m */,
 				BE4351561E4DE5810037599E /* UINavigationController+Skeleton.h */,
 				BE4351571E4DE5810037599E /* UINavigationController+Skeleton.m */,
 			);
@@ -230,6 +283,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		7B97E31D1EE9221800CF7DEF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B97E31E1EE9226D00CF7DEF /* SKAppContext.h in Headers */,
+				7B97E31F1EE9226D00CF7DEF /* SKAppDelegate.h in Headers */,
+				7B97E3201EE9226D00CF7DEF /* SKEnvironment.h in Headers */,
+				7B97E3211EE9226D00CF7DEF /* UIApplication+Skeleton.h in Headers */,
+				7B97E3221EE9226D00CF7DEF /* SKPage.h in Headers */,
+				7B97E3231EE9226D00CF7DEF /* UINavigationController+Skeleton.h in Headers */,
+				7B97E3241EE9226D00CF7DEF /* SKBizModule.h in Headers */,
+				7B97E3251EE9226D00CF7DEF /* SKModule.h in Headers */,
+				7B97E3261EE9226D00CF7DEF /* SKTPModule.h in Headers */,
+				7B97E3271EE9226D00CF7DEF /* SKUtilModule.h in Headers */,
+				7B97E3281EE9226D00CF7DEF /* SKBaseStrategy.h in Headers */,
+				7B97E3291EE9226D00CF7DEF /* SKRoutingStrategy.h in Headers */,
+				7B97E32A1EE9226D00CF7DEF /* SKURLRouter.h in Headers */,
+				7B97E32B1EE9226D00CF7DEF /* SKRouter.h in Headers */,
+				7B97E32C1EE9226D00CF7DEF /* DynamicInvocator.h in Headers */,
+				7B97E32D1EE9226D00CF7DEF /* Skeleton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE4351301E4DE4290037599E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,6 +322,7 @@
 				BEBD87981E6459C800767B68 /* SKStackAboveBottomStrategy.h in Headers */,
 				BE43516C1E4DE6810037599E /* SKRouter.h in Headers */,
 				BEBD87961E6459C800767B68 /* SKRootStrategy.h in Headers */,
+				7BA67FE71F301C7A00267FDD /* SKWindow.h in Headers */,
 				BEBD87A31E645A4600767B68 /* SKRoutingStrategy.h in Headers */,
 				BEBD878E1E6459C800767B68 /* SKBaseStrategy.h in Headers */,
 				BE43515C1E4DE5940037599E /* SKModule.h in Headers */,
@@ -264,6 +341,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		7B97E2F91EE9212100CF7DEF /* libSkeleton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B97E3001EE9212100CF7DEF /* Build configuration list for PBXNativeTarget "libSkeleton" */;
+			buildPhases = (
+				7B97E2F61EE9212100CF7DEF /* Sources */,
+				7B97E2F71EE9212100CF7DEF /* Frameworks */,
+				7B97E31D1EE9221800CF7DEF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libSkeleton;
+			productName = libSkeleton;
+			productReference = 7B97E2FA1EE9212100CF7DEF /* libSkeleton.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		BE4351321E4DE4290037599E /* Skeleton */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE43513B1E4DE4290037599E /* Build configuration list for PBXNativeTarget "Skeleton" */;
@@ -291,6 +385,11 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = IDEA;
 				TargetAttributes = {
+					7B97E2F91EE9212100CF7DEF = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3J97UM237A;
+						ProvisioningStyle = Automatic;
+					};
 					BE4351321E4DE4290037599E = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 3J97UM237A;
@@ -311,6 +410,7 @@
 			projectRoot = "";
 			targets = (
 				BE4351321E4DE4290037599E /* Skeleton */,
+				7B97E2F91EE9212100CF7DEF /* libSkeleton */,
 			);
 		};
 /* End PBXProject section */
@@ -326,6 +426,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7B97E2F61EE9212100CF7DEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B97E3111EE9219300CF7DEF /* SKBaseStrategy.m in Sources */,
+				7B97E3121EE9219300CF7DEF /* SKDefaultStrategy.m in Sources */,
+				7B97E3131EE9219300CF7DEF /* SKPresentStrategy.m in Sources */,
+				7B97E3141EE9219300CF7DEF /* SKRootStrategy.m in Sources */,
+				7B97E3151EE9219300CF7DEF /* SKStackAboveBottomStrategy.m in Sources */,
+				7B97E3161EE9219300CF7DEF /* SKStackBottomStrategy.m in Sources */,
+				7B97E3171EE9219300CF7DEF /* SKStackPushAboveStrategy.m in Sources */,
+				7B97E3181EE9219300CF7DEF /* SKStackTopStrategy.m in Sources */,
+				7B97E3191EE9219300CF7DEF /* SKSubviewStrategy.m in Sources */,
+				7B97E31A1EE9219300CF7DEF /* SKURLRouter.m in Sources */,
+				7B97E31B1EE9219300CF7DEF /* SKRouter.m in Sources */,
+				7B97E31C1EE9219300CF7DEF /* DynamicInvocator.m in Sources */,
+				7B97E30B1EE9217300CF7DEF /* SKPage.m in Sources */,
+				7B97E30C1EE9217300CF7DEF /* UINavigationController+Skeleton.m in Sources */,
+				7B97E30D1EE9217300CF7DEF /* SKBizModule.m in Sources */,
+				7B97E30E1EE9217300CF7DEF /* SKModule.m in Sources */,
+				7B97E30F1EE9217300CF7DEF /* SKTPModule.m in Sources */,
+				7B97E3101EE9217300CF7DEF /* SKUtilModule.m in Sources */,
+				7B97E3041EE9215B00CF7DEF /* SKAppContext.m in Sources */,
+				7B97E3061EE9215B00CF7DEF /* SKAppDelegate.m in Sources */,
+				7B97E3081EE9215B00CF7DEF /* SKEnvironment.m in Sources */,
+				7B97E30A1EE9215B00CF7DEF /* UIApplication+Skeleton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE43512E1E4DE4290037599E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +465,7 @@
 				BE4351691E4DE6670037599E /* SKTPModule.m in Sources */,
 				BE4351611E4DE5B50037599E /* SKBizModule.m in Sources */,
 				BE4351511E4DE4F40037599E /* UIApplication+Skeleton.m in Sources */,
+				7BA67FE81F301C7A00267FDD /* SKWindow.m in Sources */,
 				BEBD879F1E6459C800767B68 /* SKStackTopStrategy.m in Sources */,
 				7BE610D71ED5BEE200720CC6 /* DynamicInvocator.m in Sources */,
 				BEBD87971E6459C800767B68 /* SKRootStrategy.m in Sources */,
@@ -358,6 +488,32 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		7B97E3011EE9212100CF7DEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 3J97UM237A;
+				EXECUTABLE_PREFIX = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7B97E3021EE9212100CF7DEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 3J97UM237A;
+				EXECUTABLE_PREFIX = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		BE4351391E4DE4290037599E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -399,7 +555,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -444,7 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -495,6 +651,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7B97E3001EE9212100CF7DEF /* Build configuration list for PBXNativeTarget "libSkeleton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B97E3011EE9212100CF7DEF /* Debug */,
+				7B97E3021EE9212100CF7DEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BE43512D1E4DE4290037599E /* Build configuration list for PBXProject "Skeleton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

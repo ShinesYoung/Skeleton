@@ -29,7 +29,7 @@
 
 - (id)invokeInstance:(id)aOjbect selector:(SEL)aSelector params:(NSDictionary *)params
 {
-    NSLog(@"invokeInstance:selector: get params %@", params);
+//    NSLog(@"invokeInstance:selector: get params %@", params);
     
     // get class & selector
     Class aClass = [aOjbect class];
